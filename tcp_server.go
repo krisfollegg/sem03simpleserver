@@ -44,7 +44,7 @@ func main() {
                                         default:
                                                 dekryptertMelding := mycrypt.Krypter([]rune(string(buf[:n])), mycrypt.ALF_SEM03, len(mycrypt.ALF_SEM03)-4)
                                                 log.Println("Dekrypter melding: ", string(dekryptertMelding))
-                                                _, err = c.Write([]byte(dekryptertMelding))
+                                                _, err = c.Write([]byte(string(dekryptertMelding)))
                                         }
                                         if err != nil {
                                                 if err != io.EOF {
